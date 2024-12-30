@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 1000;
+    background: linear-gradient(to top, #fff, transparent);
+}
+
+header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+
+
+#title {
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+}
+
+
+#kirakira_R{
+    z-index: 2;
+}
+#kirakira_L{
+    z-index: 2;
+}
+
+
+/*--------------------------content--------------------------*/
+.content {
+    position: relative;
+    padding: 300px;
+    color:#273384;
+}
+
+
+.content_Hello {
+    padding-bottom: 500px
+}
+.content h2 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+.content p {
+    font-size: 1.2em;
+}
+.Carousel {
+    padding-bottom: 300px;
+}
+
+
+
+
+/*--------------------------Hello World!✨--------------------------*/
+
+
+
+
+
+/*--------------------------footer--------------------------*/
+footer {
+    display: flex;
+    padding: 50px 500px;
+    background-color: #afcfe9;
+    color: #fff;
+    text-align: center;
+}
+
+footer .row {
+    display: flex;
+    align-items: center; /* 垂直置中 */
+    justify-content: space-between; /* 左右極限分散 */
+}
+  
+  .footer-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* 增加連結間距 */
+}
+
+.preview-link {
+    text-decoration: none; /* 移除底線 */
+    color: #ffffff; /* 文字顏色 */
+    font-size: 1rem; /* 字體大小 */
+}

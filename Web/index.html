@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 引入 GSAP、ScrollTrigger 插件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>    
+
+</head>
+
+
+
+
+
+<body>
+    <div id="app">
+        <div class="container-fluid">
+            <header>    
+                <img src="images/bg.png" id="bg">
+                <!-- <img src="images/logo.png"> -->
+                <!-- <h2 id="title">Mountains</h2> -->
+                <img src="images/title.png" id="title">
+                <img src="images/kirakira_R.png" id="kirakira_R">
+                <img src="images/kirakira_L.png" id="kirakira_R">
+                <img src="images/line_R.png" id="line_R">
+                <img src="images/line_L.png" id="line_L">
+                <img src="images/ripple_L.png" id="ripple_L">
+                <img src="images/ripple_R.png" id="ripple_R">
+                
+            </header></br></br></br></br>
+
+            
+
+            <!--  navbar  -->
+            <nav class="navbar bg-white sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo.png" alt="Logo" style="width:70px;" class="rounded-pill"> 
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home Page</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="Works.html">Works</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+
+
+            <!--  content  -->
+            <div class="content">
+                <div class="content_Hello">
+                    <h2>Hello World!✨</h2></br></br></br>
+                    
+                    <p> 嗨:D!</br>
+                        歡迎來到我的個人網站，往下滑有一些精選作品，右上角選單點開可以連結到首頁、關於、作品，首頁是目前的頁面，關於頁面有我的連絡資訊，作品頁面有我的精選作品及全部的作品，在頁尾也可以連結到各個頁面，感謝你祝你有美好的一天:D!
+                    </p>
+                    <p>
+                        Welcome to my personal website! Scroll down to see some featured projects. You can click the menu in the top right corner to navigate to the Home, About, or Projects pages. The Home page is what you're currently viewing, the About page includes my contact information, and the Projects page showcases my featured and complete works. At the bottom of the page, you’ll also find links to these sections. Thank you, and have a wonderful day :D!
+                    </p>
+                </div>
+
+
+                <!--  content_精選作品  -->
+                <div class="content_work">
+                    <h2>精選作品</h2></br></br></br>
+                    <project-carousel>
+
+
+                        <h3 > ➤ 魔法三原色! Magic Primary Colors!</h3>
+                        <div class="Carousel">
+                            <div id="carousel-magic" class="carousel slide" data-bs-ride="carousel">
+                                <!-- Indicators/dots -->
+                                <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel-magic" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#carousel-magic" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carousel-magic" data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#carousel-magic" data-bs-slide-to="3"></button>
+                                <button type="button" data-bs-target="#carousel-magic" data-bs-slide-to="4"></button>
+                                </div>
+                                <!-- The slideshow/carousel -->
+                                <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/Magic Primary Colors!1.png" alt="MagicPrimaryColors1" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Magic Primary Colors!2.png" alt="MagicPrimaryColors2" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Magic Primary Colors!3.png" alt="MagicPrimaryColors3" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Magic Primary Colors!4.png" alt="MagicPrimaryColors4" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Magic Primary Colors!5.png" alt="MagicPrimaryColors5" class="d-block" style="width:100%">
+                                </div>
+                                </div>
+                                <!-- Left and right controls/icons -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-magic" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-magic" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h3> ➤ 獴混過關(製作中)</h3>
+                        <div class="Carousel">
+                            <div id="carousel-meerkats" class="carousel slide" data-bs-ride="carousel">
+                                <!-- Indicators/dots -->
+                                <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel-meerkats" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#carousel-meerkats" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carousel-meerkats" data-bs-slide-to="2"></button>
+                                </div>
+                                <!-- The slideshow/carousel -->
+                                <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/Get away with Meerkats1.png" alt="Get away with Meerkats1" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Get away with Meerkats2.png" alt="Get away with Meerkats2" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Get away with Meerkats3.png" alt="Get away with Meerkats3" class="d-block" style="width:100%">
+                                </div>
+                                </div>
+                                <!-- Left and right controls/icons -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-meerkats" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-meerkats" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <h3>  ➤ Candy Duck</h3>
+                        <!-- Carousel -->
+                        <div class="Carousel">
+                            <div id="carousel-candy" class="carousel slide" data-bs-ride="carousel">
+
+                                <!-- Indicators/dots -->
+                                <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel-candy" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#carousel-candy" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carousel-candy" data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#carousel-candy" data-bs-slide-to="3"></button>
+                                <button type="button" data-bs-target="#carousel-candy" data-bs-slide-to="4"></button>
+                                </div>
+                                
+                                <!-- The slideshow/carousel -->
+                                <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/Candy Duck1.png" alt="Get away with Meerkats1" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Candy Duck2.png" alt="Get away with Meerkats2" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Candy Duck3.png" alt="Get away with Meerkats3" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Candy Duck4.png" alt="Get away with Meerkats2" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Candy Duck5.png" alt="Get away with Meerkats3" class="d-block" style="width:100%">
+                                </div>
+                                </div>
+                                
+                                <!-- Left and right controls/icons -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-candy" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-candy" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                
+                    </project-carousel>
+                    
+                </div>
+
+            </div>
+
+
+            <!--  footer  -->
+            <footer>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="images/logo.png" alt="Logo" style="width:150px;" class="rounded-pill">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-list">
+                                <a class="preview-link" href="index.html">Home Page</a>
+                                <a class="preview-link" href="About.html">About</a>
+                                <a class="preview-link" href="Works.html">Works</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="images/IG.jpg" alt="IG" style="width:120px;" class="rounded-2">
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+    
+
+        
+
+
+    
+      
+    <script>
+
+        //--------------------------滾動視差--------------------------//
+
+        //toggleActions:"x x x x"
+        //第一個參數代表: onEnter，到觸發區域
+        //第二個參數代表: onLeave，離開觸發區域
+        //第三個參數代表: onEnterBack，回到觸發區域時
+        //第四個參數代表: onLeaveBack，回到觸發區域之前
+
+        gsap.fromTo("#title", 
+            { opacity: 0 }, // 初始狀態：完全透明
+            { opacity: 1, duration: 3, ease: "none" } // 結束狀態：完全不透明
+        );
+
+
+        gsap.to("#line_R", {
+            scrollTrigger: {
+                trigger: "#line_L",
+                start: "top center", // 動畫開始時滾動位置
+                end: "bottom center", // 動畫結束時滾動位置
+                scrub: true, // 滾動進度同步動畫
+            },opacity: 0, duration: 3
+        }); 
+
+        gsap.to("#line_L", {
+            scrollTrigger: {
+                trigger: "#line_L",
+                start: "top center", // 動畫開始時滾動位置
+                end: "bottom center", // 動畫結束時滾動位置
+                scrub: true, // 滾動進度同步動畫
+            },opacity: 0, duration: 3
+        });        
+
+
+        gsap.to("#kirakira_R", {
+            opacity: 0, repeat: -1, yoyo: true, duration: 1.5
+        }); 
+        gsap.to("#kirakira_L", {
+            opacity: 0, repeat: -1, yoyo: true, duration: 1.5
+        });
+         
+
+        gsap.to("#ripple_L",{
+            x: -600,
+            scrollTrigger:{
+                trigger: "#ripple_L",
+                start: "top 250px", //"top center", "10px 80%"
+                end: "bottom 100px",//"+=200"
+                toggleActions: "restart restart pause pause",
+                scrub: 1
+            }
+        })
+        gsap.to("#ripple_R",{
+            x: 600,
+            scrollTrigger:{
+                trigger: "#ripple_R",
+                start: "top 250px", //"top center", "10px 80%"
+                end: "bottom 100px",//"+=200"
+                toggleActions: "restart restart pause pause",
+                scrub: 1
+            }
+        })
+
+
+        //--------------------------Hello World!✨--------------------------//
+        gsap.to(".content_Hello h2", {
+            opacity: 0, repeat: -1, duration: 5
+        });
+
+
+        gsap.registerPlugin(ScrollTrigger);
+        // 選取所有 .Carousel 並分別處理
+        gsap.utils.toArray(".Carousel").forEach((carousel) => {
+            gsap.fromTo(
+                carousel,
+                {
+                    opacity: 0, // 初始狀態：完全透明
+                    y: 100,     // 初始狀態：向下偏移 100px
+                },
+                {
+                    opacity: 1, // 結束狀態：完全不透明
+                    y: 0,       // 回到原位
+                    duration: 2, // 動畫時間
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: carousel,    // 針對當前 Carousel 設置觸發條件
+                        start: "top 60%",     // 當該 Carousel 的頂部進入視窗 60% 時觸發
+                        end: "top 50%",       // 結束條件（可選）
+                        toggleActions: "restart none reverse reverse", // 滾動觸發後的動作
+                    },
+                }
+            );
+        });
+
+
+
+    </script>
+
+    
+
+    
+    <script src="components/ProjectCarousel.js"></script>
+    <script src="main.js"></script>
+    
+    <!-- BS5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
