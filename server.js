@@ -15,9 +15,22 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded());
 
 
-// //DB
-// var DB = require("nedb-promises");
-// var ProfolioDB = DB.create(__dirname+"/profolio.db");
+//DB
+var DB = require("nedb-promises");
+const path = require("path");
+var ProfolioDB = DB.create(path.join(__dirname, "profolio.db"));
+
+// 確保資料庫建立成功
+console.log("資料庫路徑: ", path.join(__dirname, "profolio.db"));
+
+// ProfolioDB.insert({ key: "value" })
+//   .then((doc) => {
+//     console.log("新增資料成功:", doc);
+//   })
+//   .catch((err) => {
+//     console.error("新增資料失敗:", err);
+//   });
+  
 // var ProfolioDB = DB.create(__dirname+"/contact_me.db");
 //     // ProfolioDB.insert([ 
 //     //     { href: "#portfolioModal1", imgSrc: "img/portfolio/roundicons.png", title: "Round Icons", text: "Graphic Design" },
@@ -32,7 +45,7 @@ server.use(bodyParser.urlencoded());
 
 //web get
 server.get("/:DDDDD", (req, res)=>{
-    res.send("早ㄤ");
+    res.send("GOOOOOODMORNING");
 })
 server.get("/services", (req, res)=>{
     var services = [
