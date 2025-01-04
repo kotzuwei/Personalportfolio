@@ -14,7 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
 
-    <script src="https://unpkg.com/vue@3.2.45/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
 
 </head>
@@ -28,9 +29,7 @@
         <div class="container-fluid">
             <header>    
                 <img src="images/bg.png" id="bg">
-                <!-- <img src="images/logo.png"> -->
-                <!-- <h2 id="title">Mountains</h2> -->
-                <img src="images/title.png" id="title">
+                <img src="images/Home page.png" id="title">
                 <img src="images/kirakira_R.png" id="kirakira_R">
                 <img src="images/kirakira_L.png" id="kirakira_L">
                 <img src="images/line_R.png" id="line_R">
@@ -89,7 +88,7 @@
 
                 <!--  content_精選作品  -->
                 <div class="content_work">
-                    <h2>精選作品</h2></br></br></br>
+                    <h2>精選作品</h2></br></br></br></br></br>
                     <project-carousel>
 
 
@@ -215,22 +214,25 @@
 
 
             <!--  footer  -->
-            <footer>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="images/logo.png" alt="Logo" style="width:150px;" class="rounded-pill">
-                        </div>
-                        <div class="col-md-4">
-                            <div class="footer-list">
-                                <a class="preview-link" href="index.html">Home Page</a>
-                                <a class="preview-link" href="About.html">About</a>
-                                <a class="preview-link" href="Works.html">Works</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="images/IG.jpg" alt="IG" style="width:120px;" class="rounded-2">
-                        </div>
+            <footer class="footer">
+                <div class="footer-container">
+                    <!-- Logo Section -->
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Logo" class="logo-img">
+                    </div>
+        
+                    <!-- Links Section -->
+                    <div class="footer-links">
+                        <a href="index.html">Home Page</a>
+                        <a href="About.html">About</a>
+                        <a href="Works.html">Works</a>
+                    </div>
+        
+                    <!-- IG Section -->
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/miepu._.0222/profilecard/?igsh=YnhzMzlvYng3enli" target="_blank">
+                            <img src="images/IG.jpg" alt="Instagram" class="social-img"/>
+                        </a>
                     </div>
                 </div>
             </footer>
@@ -240,114 +242,24 @@
     
 
         
-
-
-    
-      
+    <!-- Font -->
     <script>
-
-        //--------------------------滾動視差--------------------------//
-
-        //toggleActions:"x x x x"
-        //第一個參數代表: onEnter，到觸發區域
-        //第二個參數代表: onLeave，離開觸發區域
-        //第三個參數代表: onEnterBack，回到觸發區域時
-        //第四個參數代表: onLeaveBack，回到觸發區域之前
-
-        gsap.fromTo("#title", 
-            { opacity: 0 }, // 初始狀態：完全透明
-            { opacity: 1, duration: 3, ease: "none" } // 結束狀態：完全不透明
-        );
-
-
-        gsap.to("#line_R", {
-            scrollTrigger: {
-                trigger: "#line_L",
-                start: "top center", // 動畫開始時滾動位置
-                end: "bottom center", // 動畫結束時滾動位置
-                scrub: true, // 滾動進度同步動畫
-            },opacity: 0, duration: 3
-        }); 
-
-        gsap.to("#line_L", {
-            scrollTrigger: {
-                trigger: "#line_L",
-                start: "top center", // 動畫開始時滾動位置
-                end: "bottom center", // 動畫結束時滾動位置
-                scrub: true, // 滾動進度同步動畫
-            },opacity: 0, duration: 3
-        });        
-
-
-        gsap.to("#kirakira_R", {
-            opacity: 0, repeat: -1, yoyo: true, duration: 1.5
-        }); 
-        gsap.to("#kirakira_L", {
-            opacity: 0, repeat: -1, yoyo: true, duration: 1.5
-        });
-         
-
-        gsap.to("#ripple_L",{
-            x: -600,
-            scrollTrigger:{
-                trigger: "#ripple_L",
-                start: "top 250px", //"top center", "10px 80%"
-                end: "bottom 100px",//"+=200"
-                toggleActions: "restart restart pause pause",
-                scrub: 1
-            }
-        })
-        gsap.to("#ripple_R",{
-            x: 600,
-            scrollTrigger:{
-                trigger: "#ripple_R",
-                start: "top 250px", //"top center", "10px 80%"
-                end: "bottom 100px",//"+=200"
-                toggleActions: "restart restart pause pause",
-                scrub: 1
-            }
-        })
-
-
-        //--------------------------Hello World!✨--------------------------//
-        gsap.to(".content_Hello h2", {
-            opacity: 0, repeat: -1, duration: 5
-        });
-
-
-        gsap.registerPlugin(ScrollTrigger);
-        // 選取所有 .Carousel 並分別處理
-        gsap.utils.toArray(".Carousel").forEach((carousel) => {
-            gsap.fromTo(
-                carousel,
-                {
-                    opacity: 0, // 初始狀態：完全透明
-                    y: 100,     // 初始狀態：向下偏移 100px
-                },
-                {
-                    opacity: 1, // 結束狀態：完全不透明
-                    y: 0,       // 回到原位
-                    duration: 2, // 動畫時間
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: carousel,    // 針對當前 Carousel 設置觸發條件
-                        start: "top 60%",     // 當該 Carousel 的頂部進入視窗 60% 時觸發
-                        end: "top 50%",       // 結束條件（可選）
-                        toggleActions: "restart none reverse reverse", // 滾動觸發後的動作
-                    },
-                }
-            );
-        });
-
-
-
-    </script>
+        (function(d) {
+          var config = {
+            kitId: 'eez2brk',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>    
 
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="components/ProjectCarousel.js"></script>
+    <script type="module" src="./main.js"></script>
 
-    
-    <script src="/components/ProjectCarousel.js"></script>
-    <script src="../main.js"></script>
+
     
     <!-- BS5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">

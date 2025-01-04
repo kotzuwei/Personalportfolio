@@ -51,8 +51,11 @@ header img {
     z-index: 2;
 }
 
+.navbar-nav {
+    font-family: "source-han-serif-tw-subset", sans-serif;
+}
 
-/*--------------------------content--------------------------*/
+/*--------------------------Home Page_content--------------------------*/
 .content {
     position: relative;
     padding: 300px;
@@ -64,6 +67,7 @@ header img {
     padding-bottom: 500px
 }
 .content h2 {
+    font-family: "source-han-serif-tw-subset", sans-serif;
     font-size: 3.5em;
     margin-bottom: 10px;
 }
@@ -76,37 +80,165 @@ header img {
 
 
 
+/*--------------------------About_content--------------------------*/
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* 支援小螢幕換行 */
+    align-items: center; /* 垂直置中 */
+    padding: 20px; /* 內部間距 */
+}
 
-/*--------------------------Hello World!✨--------------------------*/
+.about-content .col-md-4 {
+    text-align: center;
+    margin-bottom: 20px; /* 縮小螢幕時，圖片與文字間距 */
+}
 
+#headshot {
+    opacity: 0; /* 預設透明，結合動畫 */
+    max-width: 100%; /* 圖片寬度自適應 */
+    height: auto; /* 維持比例 */
+    margin: 0 auto;
+    padding-right: 70px;
+}
+
+/*------------About_content_contact-------------*/
+.content_contact-img {
+    opacity: 0; /* 預設透明，結合動畫 */
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+}
+/*----------------------------------------------*/
+/*------------Works_content_work-------------*/
+.content_work h3 {
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: bold;
+
+    font-family: "source-han-serif-tw-subset", sans-serif;
+
+
+}
+.content_work p {
+    font-size: 1.4rem;
+}
+/*----------------------------------------------*/
+.about-content .col-md-8 {
+    text-align: left;
+    padding: 10px;
+}
+
+.about-content h3 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center; /* 默認置中，小螢幕下適用 */
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 響應式設定 */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* 小螢幕垂直堆疊 */
+    }
+
+    .about-content h3 {
+        text-align: center; /* 小螢幕下標題置中 */
+    }
+
+    .about-content p {
+        font-size: 1rem; /* 小螢幕字體略微縮小 */
+    }
+}
+
+@media (min-width: 769px) {
+    .about-content h3 {
+        text-align: left; /* 大螢幕標題靠左對齊 */
+    }
+
+    .about-content p {
+        font-size: 1.2rem; /* 大螢幕段落字體稍大 */
+    }
+}
 
 
 
 
 /*--------------------------footer--------------------------*/
-footer {
+.footer {
+    background-color: #afcfe9; /* 淡藍背景 */
+    padding: 50px 10px 50px;
+    color: #ffffff;
+    text-align: center;
+    font-family: "source-han-serif-tw-subset", sans-serif;
+}
+
+.footer-container {
     display: flex;
-    padding: 50px 500px;
-    background-color: #afcfe9;
-    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* 確保響應式堆疊，小螢幕時會自動換行 */
+}
+
+/* Logo 區域 */
+.footer-logo {
+    flex: 1;
     text-align: center;
 }
 
-footer .row {
-    display: flex;
-    align-items: center; /* 垂直置中 */
-    justify-content: space-between; /* 左右極限分散 */
-}
-  
-  .footer-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px; /* 增加連結間距 */
+.logo-img {
+    width: 150px; /* Logo 寬度 */
+    border-radius: 50%; /* 圓形圖片 */
 }
 
-.preview-link {
-    text-decoration: none; /* 移除底線 */
-    color: #ffffff; /* 文字顏色 */
-    font-size: 1rem; /* 字體大小 */
+/* 連結區域 */
+.footer-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #0c4377; /* 滑鼠移過變色 */
+}
+
+/* IG 區域 */
+.footer-social {
+    flex: 1;
+    text-align: center;
+}
+
+.social-img {
+    width: 120px; /* IG 圖片寬度 */
+    border-radius: 10px; /* 圓角圖片 */
+}
+
+/* 響應式設定 */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* 小螢幕垂直堆疊 */
+    }
+
+    .footer-links {
+        margin: 15px 0;
+        flex-direction: column;
+    }
+
+    .footer-links a {
+        margin: 5px 0;
+    }
 }

@@ -1,8 +1,9 @@
-const ProjectCarousel = {
+const WorksCarousel = {
   template: `
       <div>
            <div v-for="(carousel, index) in carousels" :key="index">
                <h3>➤ {{ carousel.title }}</h3>
+               <h4>{{ carousel.time }}</h4>
                <p>{{ carousel.description }}</p>
                <div class="Carousel">
                    <div :id="carousel.id" class="carousel slide" data-bs-ride="carousel">
@@ -43,6 +44,7 @@ const ProjectCarousel = {
                   id: 'carousel-magic',
                   title: '魔法三原色! Magic Primary Colors!',
                   description: '　　《魔法三原色!》為一款聖經故事改編的文字冒險類遊戲，玩家角色進入魔法學園就讀，遇見了以光的三原色為設定的女同學們與她們組隊驅魔尋物，並在最後拯救或是讓世界毀滅。',
+                  time: '2021年',
                   slides: [
                       { image: 'images/Magic Primary Colors!1.png', alt: 'MagicPrimaryColors1' },
                       { image: 'images/Magic Primary Colors!2.png', alt: 'MagicPrimaryColors2' },
@@ -193,4 +195,5 @@ const ProjectCarousel = {
     },
   
 };
-export default ProjectCarousel;
+
+export default WorksCarousel;

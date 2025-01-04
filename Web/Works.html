@@ -1,18 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Works</title>
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- 引入 GSAP 插件 -->
+    <!-- 引入 GSAP、ScrollTrigger 插件 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
+
 </head>
+
+
+
+
+
 <body>
+    <div id="works-app">
+        <div class="container-fluid">
+            <header>    
+                <img src="images/bg.png" id="bg">
+                <img src="images/work.png" id="title">
+                <img src="images/kirakira_R.png" id="kirakira_R">
+                <img src="images/kirakira_L.png" id="kirakira_L">
+                <img src="images/line_R.png" id="line_R">
+                <img src="images/line_L.png" id="line_L">
+                <img src="images/ripple_L.png" id="ripple_L">
+                <img src="images/ripple_R.png" id="ripple_R">
+                
+            </header></br></br></br></br>
+
+            
+
+            <!--  navbar  -->
+            <nav class="navbar bg-white sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo.png" alt="Logo" style="width:70px;" class="rounded-pill"> 
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home Page</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="Works.html">Works</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+
+
+            <!--  content  -->
+            <div class="content">
+                <div class="content_Hello">
+                    <h2>My Works✨</h2></br></br></br>
+                    
+                    <p> 
+                        這裡是我大部分的作品，希望你會喜歡！<br>
+                        有任何問題或合作提案，歡迎聯絡我！:D
+                    </p>
+                </div>
+
+
+                <!--  content_所有作品  -->
+                <div class="content_work">
+                    <!-- <h2>作品展示</h2></br></br></br> -->
+                    <works-carousel>
+
+                
+                    </works-carousel>
+                    
+                </div>
+
+            </div>
+
+
+            <!--  footer  -->
+            <footer class="footer">
+                <div class="footer-container">
+                    <!-- Logo Section -->
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Logo" class="logo-img">
+                    </div>
+        
+                    <!-- Links Section -->
+                    <div class="footer-links">
+                        <a href="index.html">Home Page</a>
+                        <a href="About.html">About</a>
+                        <a href="Works.html">Works</a>
+                    </div>
+        
+                    <!-- IG Section -->
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/miepu._.0222/profilecard/?igsh=YnhzMzlvYng3enli" target="_blank">
+                            <img src="images/IG.jpg" alt="Instagram" class="social-img"/>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+    
+
+    <!-- Font -->
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'eez2brk',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="components/WorksCarousel.js"></script>
+    <script type="module" src="./main.js"></script>
+
+
+    
+    <!-- BS5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>
+
 </html>
