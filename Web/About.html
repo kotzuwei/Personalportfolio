@@ -117,12 +117,12 @@
 
                 <!--  content_留言區  -->
                 <div id="content_comment">
-                    <h2>Leave a Comment</h2>
+                    <h2>Comment📝</h2>
                     <form id="comment-form">
-                      <input type="text" id="name" name="name" placeholder="Your Name" required>
-                      <input type="email" id="email" name="email" placeholder="Your Email" required>
-                      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                      <button type="submit">Submit</button>
+                      <input type="text" id="name" name="name" placeholder="Name" required>
+                      <input type="email" id="email" name="email" placeholder="Email" required>
+                      <textarea id="message" name="message" placeholder="有任何問題/想說的話歡迎留言與我聯繫! :D" required></textarea>
+                      <button type="submit" id="submit">Submit</button>
                     </form>
                     <p id="status-message" style="display: none;"></p>
                 </div>
@@ -275,7 +275,7 @@
                 start: "top 90%", // 觸發位置（元素頂端進入視窗 80%）
                 end: "top 20%", // 動畫結束位置
                 scrub: true, // 滾動控制動畫
-                markers: true // 遮罩
+                markers: false // 遮罩
             },
         });
 
@@ -289,7 +289,7 @@
                 start: "top 90%", // 觸發位置（元素頂端進入視窗 80%）
                 end: "top 20%", // 動畫結束位置
                 scrub: true, // 滾動控制動畫
-                markers: true // 遮罩
+                markers: false // 遮罩
             },
         });
 

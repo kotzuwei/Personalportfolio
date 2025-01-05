@@ -1,40 +1,45 @@
 const WorksCarousel = {
   template: `
       <div>
-           <div v-for="(carousel, index) in carousels" :key="index">
-               <h3>➤ {{ carousel.title }}</h3>
-               <h4>{{ carousel.time }}</h4>
-               <p>{{ carousel.description }}</p>
-               <div class="Carousel">
-                   <div :id="carousel.id" class="carousel slide" data-bs-ride="carousel">
-                       <div class="carousel-indicators">
-                           <button v-for="(_, slideIndex) in carousel.slides" 
-                               :key="slideIndex"
-                               type="button"
-                               :data-bs-target="'#' + carousel.id"
-                               :data-bs-slide-to="slideIndex"
-                               :class="{ active: slideIndex === 0 }">
-                           </button>
-                       </div>
-                       
-                       <div class="carousel-inner">
-                           <div v-for="(slide, slideIndex) in carousel.slides" 
-                               :key="slideIndex"
-                               :class="['carousel-item', { active: slideIndex === 0 }]">
-                               <img :src="slide.image" :alt="slide.alt" class="d-block" style="width:100%">
-                           </div>
-                       </div>
-                       
-                       <button class="carousel-control-prev" type="button" :data-bs-target="'#' + carousel.id" data-bs-slide="prev">
-                           <span class="carousel-control-prev-icon"></span>
-                       </button>
-                       <button class="carousel-control-next" type="button" :data-bs-target="'#' + carousel.id" data-bs-slide="next">
-                           <span class="carousel-control-next-icon"></span>
-                       </button>
-                   </div>
-               </div>
-           </div>
-       </div>
+          <div v-for="(carousel, index) in carousels" :key="index">
+
+            <h3>➤ {{ carousel.title }}</h3>
+            <h4>{{ carousel.time }}</h4>
+            <p>{{ carousel.description }}</p>
+            <p>{{ carousel.more }}
+            <a :href="carousel.more" target="_blank">......</a>
+            </p>
+
+            <div class="Carousel">
+                <div :id="carousel.id" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button v-for="(_, slideIndex) in carousel.slides" 
+                            :key="slideIndex"
+                            type="button"
+                            :data-bs-target="'#' + carousel.id"
+                            :data-bs-slide-to="slideIndex"
+                            :class="{ active: slideIndex === 0 }">
+                        </button>
+                    </div>
+                    
+                    <div class="carousel-inner">
+                        <div v-for="(slide, slideIndex) in carousel.slides" 
+                            :key="slideIndex"
+                            :class="['carousel-item', { active: slideIndex === 0 }]">
+                            <img :src="slide.image" :alt="slide.alt" class="d-block" style="width:100%">
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-control-prev" type="button" :data-bs-target="'#' + carousel.id" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" :data-bs-target="'#' + carousel.id" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+          </div>
+        </div>
   `,
   
   data() {
@@ -43,8 +48,9 @@ const WorksCarousel = {
               {
                   id: 'carousel-magic',
                   title: '魔法三原色! Magic Primary Colors!',
+                  time: '-2024年_大二下',
                   description: '　　《魔法三原色!》為一款聖經故事改編的文字冒險類遊戲，玩家角色進入魔法學園就讀，遇見了以光的三原色為設定的女同學們與她們組隊驅魔尋物，並在最後拯救或是讓世界毀滅。',
-                  time: '2021年',
+                  more:'https://reurl.cc/kObXgx',
                   slides: [
                       { image: 'images/Magic Primary Colors!1.png', alt: 'MagicPrimaryColors1' },
                       { image: 'images/Magic Primary Colors!2.png', alt: 'MagicPrimaryColors2' },
@@ -56,6 +62,7 @@ const WorksCarousel = {
               {
                   id: 'carousel-meerkats',
                   title: '獴混過關(製作中)',
+                  time: '-2024年_大三上',
                   description: '　　將遊戲與互動裝置技術（Aduino）結合，開發出此款使用自製搖桿遊玩的遊戲。狐獴需不斷往上跳直到終點，同時躲避敵人及小心從岩石上墜落。',
                   slides: [
                       { image: 'images/Get away with Meerkats1.png', alt: 'Get away with Meerkats1' },
@@ -68,6 +75,7 @@ const WorksCarousel = {
               {
                   id: 'carousel-candy',
                   title: 'Candy Duck',
+                  time: '-2024年_大二下',
                   description: '　　結合手語動畫的寓教於樂小遊戲，玩家須將糖果擊落，讓鴨子吃到，在限時內把糖果全部吃掉即可勝利。',
                   slides: [
                       { image: 'images/Candy Duck1.png', alt: 'Candy Duck1' },
@@ -75,6 +83,18 @@ const WorksCarousel = {
                       { image: 'images/Candy Duck3.png', alt: 'Candy Duck3' },
                       { image: 'images/Candy Duck4.png', alt: 'Candy Duck4' },
                       { image: 'images/Candy Duck5.png', alt: 'Candy Duck5' },
+                  ]
+              },
+              {
+                  id: 'carousel-heart',
+                  title: '玉兔抱春',
+                  time: '-2022年_大一上',
+                  description: '　　光影立體裝置設計作品，多使用可重複利用之材料製作，用氣球棒作為骨架，外層貼上玻璃紙及反射材料。作品理念：象徵新的一年到來，希望圍繞，微光能夠溫暖人們。',
+                  more:'https://youtu.be/L_7skjOvA8Q',
+                  slides: [
+                      { image: 'images/Heart Light1.png', alt: 'Heart Light1' },
+                      { image: 'images/Heart Light2.png', alt: 'Heart Light2' },
+                      { image: 'images/Heart Light3.png', alt: 'Heart Light3' },
                   ]
               }
           ]
