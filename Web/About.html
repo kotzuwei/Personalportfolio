@@ -70,8 +70,6 @@
 
 
 
-
-
             <!--  content  -->
             <div class="content">
                 <div class="content_Hello">
@@ -114,8 +112,21 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
+
+
+                <!--  content_留言區  -->
+                <div id="content_comment">
+                    <h2>Leave a Comment</h2>
+                    <form id="comment-form">
+                      <input type="text" id="name" name="name" placeholder="Your Name" required>
+                      <input type="email" id="email" name="email" placeholder="Your Email" required>
+                      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                      <button type="submit">Submit</button>
+                    </form>
+                    <p id="status-message" style="display: none;"></p>
+                </div>
+                <script src="comment.js"></script>
 
             </div>
 
