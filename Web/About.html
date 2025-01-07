@@ -76,8 +76,8 @@
                     <h2>About Me✨</h2></br></br></br><br /><br /><br />
 
                     <div class="container-fluid">
-                        <div class="row align-items-center about-content">
-                            <div class="col-md-4 text-center">
+                        <div class="about-content">
+                            <div class="col-md-4">
                                 <img id="headshot" src="Images/headshot.png" alt="headshot" />
                             </div>
                             <div class="col-md-8">
@@ -88,23 +88,24 @@
                             </div>
                         </div>
                     </div>
-                    
+                                      
                     
                 </div>
 
 
                 <!--  content_聯絡資訊  -->
                 <div class="content_contact">
-                    <h2>聯絡資訊</h2></br></br></br>
+                    <h2> </h2></br></br></br>
 
                     <div class="container-fluid">
-                        <div class="row align-items-center about-content">
+                        <div class="about-content">
                             <div class="col-md-4 ">
                                 <a href="https://www.instagram.com/miepu._.0222/profilecard/?igsh=YnhzMzlvYng3enli" target="_blank">
                                     <img id="headshot" class="content_contact-img" src="Images/IG.jpg" alt="Instagram" />
                                 </a>
                             </div>
                             <div class="col-md-8">
+                                <h3 class="text-left">聯絡資訊</h3>
                                 <p>
                                     Instagram：Miepu._.0222</br>
                                     電子郵件：owo6289@gmail.com
@@ -266,32 +267,33 @@
         //--------------------------About_content--------------------------//
         // 頭貼淡入動畫
         gsap.to("#headshot", {
-            opacity: 1, // 從透明到可見
-            y: 0, // 從下方移動到原位
-            duration: 5, // 動畫時間
-            ease: "power2.out", // 平滑曲線
-            scrollTrigger: {
-                trigger: "#headshot", // 觸發元素
-                start: "top 90%", // 觸發位置（元素頂端進入視窗 80%）
-                end: "top 20%", // 動畫結束位置
-                scrub: true, // 滾動控制動畫
-                markers: false // 遮罩
-            },
-        });
+    opacity: 1,
+    y: 0,
+    duration: 5,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: "#headshot", // 觸發元素
+        start: "top 80%", // 觸發位置：元素頂端進入視窗 80% 時觸發
+        end: "top 40%", // 動畫結束位置：元素頂端進入視窗 40% 時結束
+  
+        markers: false // 顯示滾動標記，便於調試
+    },
+});
 
-        gsap.to(".content_contact-img",{
-            opacity: 1, // 從透明到可見
-            y: 0, // 從下方移動到原位
-            duration: 5, // 動畫時間
-            ease: "power2.out", // 平滑曲線
-            scrollTrigger: {
-                trigger: ".content_contact-img", // 觸發元素
-                start: "top 90%", // 觸發位置（元素頂端進入視窗 80%）
-                end: "top 20%", // 動畫結束位置
-                scrub: true, // 滾動控制動畫
-                markers: false // 遮罩
-            },
-        });
+gsap.to(".content_contact-img",{
+    opacity: 1,
+    y: 0,
+    duration: 5,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".content_contact-img", // 觸發元素
+        start: "top 80%", // 觸發位置：元素頂端進入視窗 80% 時觸發
+        end: "top 40%", // 動畫結束位置：元素頂端進入視窗 40% 時結束
+ 
+        markers: false // 顯示滾動標記，便於調試
+    },
+});
+
 
 
 

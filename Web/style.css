@@ -1,298 +1,400 @@
+/* 
+   box-sizing: border-box:
+   - 設定所有元素（包括其內邊距 padding 和邊框 border）的大小計算方式。
+   - 預設值是 content-box，僅計算內容的寬高，padding 和 border 會額外加在總尺寸上。
+   - 使用 border-box 後，元素的 padding 和 border 都包含在指定的 width 和 height 中，
+*/
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* 統一元素的尺寸計算方式，確保一致性 */
 }
+
+
+
+
+
+/* ---------------- Header ---------------- */
+/*
+   - Header 網站頂部的主要區塊，展示滾動視差圖片。
+   - 使用 flex 排版技術，確保內容在垂直和水平方向居中。
+   - 通過 position: relative 和 height: 100vh，讓 Header 佔據整個視窗高度。
+        - vh：CSSㄉ視ㄉ窗高度單位（Viewport Height），1vh：1%。
+        - 1vh = 10px。100vh 就表示視窗的整個高度。
+   - Header 的背景圖片和文字分別使用 img 和文字層相互覆蓋顯示。
+*/
 
 header {
-    position: relative;
+    position: relative; /* 相對定位 Header 內的子元素，方便調整其位置 */
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh; /* 佔據整個視窗高度 */
+    overflow: hidden; /* 隱藏超出範圍的內容（如背景圖片多餘部分） */
+    display: flex; /* 彈性盒模型，便於內容對齊 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
 }
+
 
 header::before {
-    content: '';
-    position: absolute;
+    /* 
+       Header 最底層漸層遮罩，柔化底部過渡效果。
+    */
+    content: ''; /* 空內容，創建偽元素 */
+    position: absolute; /* 絕對定位，相對於 header 進行定位 */
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100%; /* 寬度與 Header 一致 */
     height: 200px;
-    z-index: 1000;
-    background: linear-gradient(to top, #fff, transparent);
+    z-index: 1000; /* 提升層級，確保漸層位於背景圖片之上 */
+    background: linear-gradient(to top, #fff, transparent); /* 白色到透明的漸層效果 */
 }
+
 
 header img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    /*
+       背景圖片的設定，填滿整個 Header，並保持圖片比例。
+       `object-fit: cover` 確保圖片不會變形，充滿 Header 區域。
+    */
+    position: absolute; /* 絕對定位，圖片擺在 Header 內部 */
+    top: 0; 
+    left: 0; 
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
+    height: 100%; 
+    object-fit: cover; /* 保持圖片的原比例，同時填滿整個區域（可能裁剪多餘部分） */
+    pointer-events: none; /* 禁止鼠標與圖片互動 */ 
 }
 
+
+#kirakira_R, #kirakira_L {
+    z-index: 1000;
+}
 
 
 #title {
     position: relative;
     color: #fff;
-    font-size: 10em;
+    font-size: 6em; 
+    text-align: center;
+    padding: 10px;
 }
 
 
-#kirakira_R{
-    z-index: 2;
-}
-#kirakira_L{
-    z-index: 2;
+.navbar-nav{
+    font-family: "source-han-serif-tw-subset", sans-serif; 
 }
 
-.navbar-nav {
-    font-family: "source-han-serif-tw-subset", sans-serif;
+
+/* 響應式設計：針對螢幕寬度小於 768px 的設備（例如手機和平板）， 縮小標題文字大小，確保文字在小螢幕上仍然清晰可見。 */
+@media (max-width: 768px) {
+    #title {
+        font-size: 3em; 
+    }
 }
 
-/*--------------------------Home Page_content--------------------------*/
+
+
+
+
+/* ---------------- Home Page Content ---------------- */
+/*
+   - content 首頁的主要內容區塊。
+   - 相對定位，子元素根據 content 位置定位。
+*/
+
 .content {
-    position: relative;
-    padding: 300px;
-    color:#273384;
+    position: relative; /* 設定相對定位，為子元素提供定位基準 */
+    padding: 10vh;
+    color: #273384; 
 }
 
 
-.content_Hello {
-    padding-bottom: 400px
-}
 .content h2 {
-    font-family: "source-han-serif-tw-subset", sans-serif;
-    font-size: 3.5em;
-    margin-bottom: 60px;
+    font-family: "source-han-serif-tw-subset", sans-serif; 
+    font-size: 3em; 
+    margin-bottom: 30px; 
 }
+
+
 .content p {
-    font-size: 1.2em;
+    font-size: 1.5em;
+    
 }
+
+
 .Carousel {
-    padding-bottom: 300px;
+    padding-bottom: 15vh; /* Viewport Height 1vh = 10px，15vh = 150px */
+}
+
+
+/* 響應式設計：當螢幕寬度小於等於 768px 時，調整頁面排版 */
+@media (max-width: 768px) {
+    .content {
+        padding: 50px; 
+    }
+
+    .content h2 {
+        font-size: 2.4em;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
 }
 
 
 
-/*--------------------------About_content--------------------------*/
+
+
+/* ---------------- Works.htnl_Content ---------------- */ 
+
+.content_work {
+    display: flex; /* 彈性盒子模型，子元素可排列成行或列 */
+    flex-wrap: wrap; /* 允許子元素換行 */
+    justify-content: space-between; /* 設定子元素間的空間均等分佈 */
+    gap: 20px; /* 設定子元素之間的間距為 20px */
+    margin-top: 40vh; /* Viewport Height 1vh = 10px，40vh = 400px */
+}
+
+
+.content_work h3 {
+    font-size: 2.3em; 
+    font-weight: bold; 
+    font-family: "source-han-serif-tw-subset", sans-serif;
+    margin-bottom: 20px;
+}
+
+
+.content_work p {
+    font-size: 1.5em; 
+}
+
+
+/* 響應式設計：當螢幕寬度小於等於 768px 時，改變頁面排版 */
+@media (max-width: 768px) {
+    .content_work {
+        flex-direction: column; /* 將子元素排列方向改為垂直 (列式排列) */
+        align-items: center; /* 將子元素置中對齊 */
+    }
+
+    .content_work h3 {
+        font-size: 1.7em;
+    }
+
+    .content_work p {
+        font-size: 1.2em; 
+    }
+}
+
+
+
+
+
+/* ---------------- About.html_Content ---------------- */
+
 .about-content {
-    display: flex;
-    flex-wrap: wrap; /* 支援小螢幕換行 */
-    align-items: center; /* 垂直置中 */
-    padding: 20px; /* 內部間距 */
+    display: flex; /* 使用彈性盒子模型進行排版 */
+    flex-wrap: wrap; /* 子元素換行 */
+    align-items: center; /* 垂直居中對齊子元素 */
+    padding: 20px;
+    gap: 10px; /* 調整子元素間距為 10px（減少間距） */
 }
 
 .about-content .col-md-4 {
-    text-align: center;
-    margin-bottom: 20px; /* 縮小螢幕時，圖片與文字間距 */
+    display: flex; /* 設定為彈性盒子模型 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    flex: 1; /* 讓每個區塊占據同等的寬度 */
+    max-width: 60%; /* 確保每個區塊不會超過容器寬度 */
+    text-align: center; 
 }
 
+.text-left { 
+    font-weight: bold;
+}
+
+/* 圖片設置 */
 #headshot {
-    opacity: 0; /* 預設透明，結合動畫 */
-    max-width: 100%; /* 圖片寬度自適應 */
-    height: auto; /* 維持比例 */
-    margin: 0 auto;
-    padding-right: 70px;
+    max-width: 60%;
+    height: auto; 
+    margin: 0 auto; /* 圖片水平居中 */
 }
 
-/*----------About_content_contact-----------*/
-.content_contact-img {
-    opacity: 0; /* 預設透明，結合動畫 */
-    width: 60%;
-    height: auto;
-    margin: 0 auto;
-}
-
-/*------------------------------------------*/
-
-/*------------Works_content_work------------*/
-.content_work h3 {
-    margin-bottom: 40px;
-    font-size: 2.2rem;
-    font-weight: bold;
-    font-family: "source-han-serif-tw-subset", sans-serif;
-}
-.content_work p {
-    font-size: 1.4rem;
-}
-
-
-/*-----------------------------------------*/
-.about-content .col-md-8 {
-    text-align: left;
-    padding: 10px;
-}
-
+/* 標題設置 */
 .about-content h3 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center; /* 默認置中，小螢幕下適用 */
+    font-size: 2.3em; 
+    text-align: left;
+    margin-bottom: 10px; 
 }
 
+/* 段落設置 */
 .about-content p {
-    font-size: 1rem;
+    font-size: 1.5em; 
     line-height: 1.6;
 }
 
-/* 響應式設定 */
+/* 響應式設計：當螢幕寬度小於等於 768px 時，調整頁面排版 */
 @media (max-width: 768px) {
     .about-content {
-        flex-direction: column; /* 小螢幕垂直堆疊 */
+        flex-direction: column; /* 改變排列方向為垂直方向（列式排列） */
     }
 
     .about-content h3 {
-        text-align: center; /* 小螢幕下標題置中 */
+        font-size: 2em; 
+        margin-bottom: 8px; /* 調整標題與段落之間的間距 */
     }
 
     .about-content p {
-        font-size: 1rem; /* 小螢幕字體略微縮小 */
-    }
-}
-
-@media (min-width: 769px) {
-    .about-content h3 {
-        text-align: left; /* 大螢幕標題靠左對齊 */
-    }
-
-    .about-content p {
-        font-size: 1.2rem; /* 大螢幕段落字體稍大 */
+        font-size: 1.4em; /* 調整段落字體大小為 0.9 倍標準字體大小 */
     }
 }
 
 
 
-/*---------------------Contact_content----------------------*/
+
+
+/* ---------------- About.html_Contact ---------------- */
 #content_comment {
-    max-width: 600px;
-    margin: 250px auto 100px;
-    background: #fff;
-    padding: 30px 40px 40px 40px; 
-    border-radius: 8px;
+    max-width: 600px; /* 設定表單區塊的最大寬度為 600px */
+    margin: 200px auto 150px; /* 設定上下外邊距為 150px 和 50px，並讓區塊居中顯示 */
+    background: #fff; 
+    padding: 20px 30px; /* 設定內邊距，讓區塊內容不會貼近邊緣 */
+    border-radius: 8px; /* 表單區塊邊角變圓 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#content_comment h2 {
-    padding-bottom: 20px; 
-
+form {
+    display: flex; /* 設定表單為彈性盒子模型 */
+    flex-direction: column; /* 子元素垂直排列 */
+    gap: 10px; /* 設定每個表單元素間的間距為 10px */
 }
 
-  form {
-    display: flex; /* 使用彈性佈局 */
-    flex-direction: column; /* 垂直排列 */
-    gap: 10px;
-  }
-  
-  form input, form textarea, form button {
+form input, form textarea, form button {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  form button {
-    background-color: #afcfe9;
-    color: white;
-    border: none;
-    cursor: pointer; /* 滑鼠變成手指 */
-  }
-  
-  form button:hover {
-    background-color: #5f9fd3;
-  }
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 1em; 
+}
 
-  #submit {
-    font-weight: bold;
-    font-family: "source-han-serif-tw-subset", sans-serif;
-    font-size: 1.1rem; /* 大螢幕段落字體稍大 */
-  }
+form button {
+    background-color: #afcfe9; /* 按鈕的背景顏色 */
+    color: white; /* 按鈕文字顏色為白色 */
+    border: none; /* 去除按鈕的邊框 */
+    cursor: pointer; /* 設定鼠標懸停在按鈕上時顯示手型 */
+}
 
-  
-  #status-message {
-    margin-top: 10px;
-    color: #0c4377;
-    text-align: center;
-  }
+form button:hover {
+    background-color: #8fbce0 /* 當鼠標懸停在按鈕上時，背景顏色變為藍色 */
+}
 
-
-
-/*--------------------------footer--------------------------*/
-.footer {
-    background-color: #afcfe9; /* 淡藍背景 */
-    padding: 50px 10px 50px;
-    color: #ffffff;
-    text-align: center;
+#status-message{
+    color: #3c76b9;
     font-family: "source-han-serif-tw-subset", sans-serif;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* 確保響應式堆疊，小螢幕時會自動換行 */
+#submit {
+    font-weight: bold; 
+    font-family: "source-han-serif-tw-subset", sans-serif;
+    font-size: 1rem; 
 }
 
-/* Logo 區域 */
-.footer-logo {
-    flex: 1;
-    text-align: center;
-}
-
-.logo-img {
-    width: 150px; /* Logo 寬度 */
-    border-radius: 50%; /* 圓形圖片 */
-}
-
-/* 連結區域 */
-.footer-links {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #0c4377; /* 滑鼠移過變色 */
-}
-
-/* IG 區域 */
-.footer-social {
-    flex: 1;
-    text-align: center;
-}
-
-.social-img {
-    width: 120px; /* IG 圖片寬度 */
-    border-radius: 10px; /* 圓角圖片 */
-}
-
-/* 響應式設定 */
+/* 響應式設計：當螢幕寬度小於等於 768px 時，調整表單的樣式 */
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column; /* 小螢幕垂直堆疊 */
+    #content_comment {
+        margin: 100px auto; /* 調整外邊距，使表單區塊上下距離減少 */
+        padding: 15px; /* 減少內邊距，使表單區塊更緊湊 */
     }
 
-    .footer-links {
-        margin: 15px 0;
-        flex-direction: column;
+    form input, form textarea, form button {
+        font-size: 0.9em; /* 減小表單元素的字體大小，適應小螢幕 */
+    }
+}
+
+
+
+
+
+/* ---------------- Footer ---------------- */ 
+
+.footer { 
+    background-color: #afcfe9;  
+    padding: 30px 10px;  
+    color: #ffffff;  
+    text-align: center;  
+    font-family: "source-han-serif-tw-subset", sans-serif;
+}
+
+
+.footer-container { 
+    display: flex;  /* 使用彈性盒子模型 */
+    justify-content: space-between;  /* 讓子元素左右分佈 */
+    align-items: center;  /* 使子元素垂直居中 */
+    max-width: 1200px;  
+    margin: 0 auto;  
+    flex-wrap: wrap;  /* 子元素換行 */
+}
+
+
+.footer-logo { 
+    flex: 1;  /* 設置容器占據1份寬度 */
+    text-align: center;  
+}
+
+
+.logo-img { 
+    width: 120px;  
+    border-radius: 50%;  /* 圓角，使圖片為圓形 */
+}
+
+
+.footer-links { 
+    flex: 2;  /* 設置容器占據2份寬度 */
+    display: flex;  /* 使用彈性盒子模型 */
+    justify-content: center;  /* 讓連結水平居中 */
+    gap: 10px;  /* 連結間隔設為10px */
+    flex-wrap: wrap;  /* 連結換行 */
+}
+
+
+.footer-links a { 
+    text-decoration: none;  /* 去掉連結線 */
+    color: #ffffff;  
+    font-size: 1rem;  
+    transition: color 0.3s;  /* 設置顏色變化的過渡效果 */
+}
+
+
+.footer-links a:hover { 
+    color: #0c4377;  /* 懸停時文字顏色變為深藍色 */
+}
+
+
+.footer-social { 
+    flex: 1;  /* 設置容器占據1份寬度 */
+    text-align: center; 
+}
+
+
+.social-img { 
+    width: 100px;  
+    border-radius: 10px;  /* 圓角圖片 */
+}
+
+
+/* 響應式設計：當螢幕寬度小於等於768px時，調整頁腳樣式 */
+@media (max-width: 768px) { 
+    .footer-container { 
+        flex-direction: column;  /* 讓頁腳內容顯示為垂直排列 */
     }
 
-    .footer-links a {
-        margin: 5px 0;
+    .footer-links { 
+        margin: 15px 0;  /* 設置頁腳連結容器的上下外邊距為15px */
+    }
+
+    .footer-links a { 
+        margin: 5px 0;  /* 設置每個連結的上下外邊距為5px */
+    }
+
+    .footer-social { 
+        margin-top: 10px;  /* 設置社交圖標的上邊距為10px */
     }
 }
