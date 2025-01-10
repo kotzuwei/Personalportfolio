@@ -1,84 +1,28 @@
 const ProjectCarousel = {
-  template: `
-      <div>
-           <div v-for="(carousel, index) in carousels" :key="index">
-               <h3>➤ {{ carousel.title }}</h3>
-               <p>{{ carousel.description }}</p>
-               <div class="Carousel">
-                   <div :id="carousel.id" class="carousel slide" data-bs-ride="carousel">
-                       <div class="carousel-indicators">
-                           <button v-for="(_, slideIndex) in carousel.slides" 
-                               :key="slideIndex"
-                               type="button"
-                               :data-bs-target="'#' + carousel.id"
-                               :data-bs-slide-to="slideIndex"
-                               :class="{ active: slideIndex === 0 }">
-                           </button>
-                       </div>
-                       
-                       <div class="carousel-inner">
-                           <div v-for="(slide, slideIndex) in carousel.slides" 
-                               :key="slideIndex"
-                               :class="['carousel-item', { active: slideIndex === 0 }]">
-                               <img :src="slide.image" :alt="slide.alt" class="d-block" style="width:100%">
-                           </div>
-                       </div>
-                       
-                       <button class="carousel-control-prev" type="button" :data-bs-target="'#' + carousel.id" data-bs-slide="prev">
-                           <span class="carousel-control-prev-icon"></span>
-                       </button>
-                       <button class="carousel-control-next" type="button" :data-bs-target="'#' + carousel.id" data-bs-slide="next">
-                           <span class="carousel-control-next-icon"></span>
-                       </button>
-                   </div>
-               </div>
-           </div>
-       </div>
-  `,
   
   data() {
       return {
           carousels: [
-              {
-                  id: 'carousel-magic',
-                  title: '魔法三原色! Magic Primary Colors!',
-                  description: '　　《魔法三原色!》為一款聖經故事改編的文字冒險類遊戲，玩家角色進入魔法學園就讀，遇見了以光的三原色為設定的女同學們與她們組隊驅魔尋物，並在最後拯救或是讓世界毀滅。',
-                  slides: [
-                      { image: 'Images/Magic Primary Colors!1.png', alt: 'MagicPrimaryColors1' },
-                      { image: 'Images/Magic Primary Colors!2.png', alt: 'MagicPrimaryColors2' },
-                      { image: 'Images/Magic Primary Colors!3.png', alt: 'MagicPrimaryColors3' },
-                      { image: 'Images/Magic Primary Colors!4.png', alt: 'MagicPrimaryColors4' },
-                      { image: 'Images/Magic Primary Colors!5.png', alt: 'MagicPrimaryColors5' }
-                  ]
-              },
-              {
-                  id: 'carousel-meerkats',
-                  title: '獴混過關(製作中)',
-                  description: '　　將遊戲與互動裝置技術（Aduino）結合，開發出此款使用自製搖桿遊玩的遊戲。狐獴需不斷往上跳直到終點，同時躲避敵人及小心從岩石上墜落。',
-                  slides: [
-                      { image: 'Images/Get away with Meerkats1.png', alt: 'Get away with Meerkats1' },
-                      { image: 'Images/Get away with Meerkats2.png', alt: 'Get away with Meerkats2' },
-                      { image: 'Images/Get away with Meerkats3.png', alt: 'Get away with Meerkats3' },
-                      { image: 'Images/Get away with Meerkats4.png', alt: 'Get away with Meerkats4' },
-                      { image: 'Images/Get away with Meerkats5.png', alt: 'Get away with Meerkats5' },
-                  ]
-              },
-              {
-                  id: 'carousel-candy',
-                  title: 'Candy Duck',
-                  description: '　　結合手語動畫的寓教於樂小遊戲，玩家須將糖果擊落，讓鴨子吃到，在限時內把糖果全部吃掉即可勝利。',
-                  slides: [
-                      { image: 'Images/Candy Duck1.png', alt: 'Candy Duck1' },
-                      { image: 'Images/Candy Duck2.png', alt: 'Candy Duck2' },
-                      { image: 'Images/Candy Duck3.png', alt: 'Candy Duck3' },
-                      { image: 'Images/Candy Duck4.png', alt: 'Candy Duck4' },
-                      { image: 'Images/Candy Duck5.png', alt: 'Candy Duck5' },
-                  ]
-              }
+              
           ]
       }
   },
   mounted() {
+      fetch("/Carouselindex")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          this.carousels = data;
+        })
+        .catch((error) => {
+          console.error("Error fetching components:", error);
+        });
+
       this.$nextTick(() => {
           // 1. 初始化 GSAP 動畫
           this.initAnimations();
