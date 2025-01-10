@@ -87,10 +87,49 @@
                 <!--  content_所有作品  -->
                 <div class="content_work">
                     <h2>作品展示</h2></br></br></br>
-                    <works-carousel>
+                    <div id="works-app">
+                        <div v-for="(carousel, index) in carousels" :key="index">
+                          
+                            <h3>➤ {{ carousel.title }}</h3>
+                            <h4>{{ carousel.time }}</h4>
+                            <p>{{ carousel.description }}</p>
+                            <p>{{ carousel.more }}
+                            <a :href="carousel.more" target="_blank">......</a>
+                            </p>
 
-                
-                    </works-carousel>
+                            <div class="Carousel">
+                                <div :id="carousel.id" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button
+                                        v-for="(_, slideIndex) in carousel.slides"
+                                        :key="slideIndex"
+                                        type="button"
+                                        :data-bs-target="'#' + carousel.id"
+                                        :data-bs-slide-to="slideIndex"
+                                        :class="{ active: slideIndex === 0 }"
+                                    ></button>
+                                </div>
+                    
+                                <div class="carousel-inner">
+                                    <div
+                                    v-for="(slide, slideIndex) in carousel.slides"
+                                    :key="slideIndex"
+                                    :class="['carousel-item', { active: slideIndex === 0 }]"
+                                    >
+                                    <img :src="slide.image" :alt="slide.alt" class="d-block" style="width:100%" />
+                                    </div>
+                                </div>
+                    
+                                <button class="carousel-control-prev" type="button" :data-bs-target="'#' + carousel.id" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" :data-bs-target="'#' + carousel.id" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                                </div>
+                          </div>
+                        </div>
+                      </div>
                     
                 </div>
 

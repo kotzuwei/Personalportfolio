@@ -20,7 +20,7 @@ const ProjectCarousel = {
           this.carousels = data;
         })
         .catch((error) => {
-          console.error("Error fetching components:", error);
+          console.error("Error fetching Carouselindex:", error);
         });
 
       this.$nextTick(() => {
