@@ -288,7 +288,35 @@ CarouselWorksDB.insert([
   //       { image: 'Images/Chicken NO die2.png', alt: 'Chicken NO die2' },
   //       { image: 'Images/Chicken NO die3.png', alt: 'Chicken NO die3' },
   //   ]
+  // },
+  // {
+  //   order: 12,
+  //   id: 'carousel-OneNight',
+  //   title: '一個夜晚一個奇蹟',
+  //   time: '-2025年_大三下',
+  //   description: '　　數位遊戲設計課程使我習得許多新技術，期末專題因同時進行畢業製作及其他專案，導致作品完成度不如理想。但獨立開發遊戲讓我體會到，專案時程掌握的重要性，及獨立開發會遇到的問題。',
+  //   more:'https://reurl.cc/oYqDpQ',
+  //   slides: [
+  //       { image: 'Images/OneNight1.webp', alt: 'OneNight1' },
+  //       { image: 'Images/OneNight2.webp', alt: 'OneNight2' },
+  //       { image: 'Images/OneNight3.webp', alt: 'OneNight3' },
+  //   ]
+  // },
+  // {
+  //   order: 13,
+  //   id: 'carousel-Treasure',
+  //   title: '奪寶夜宴',
+  //   time: '-2025年_大三下',
+  //   description: '　　設計方法課程，設計之桌遊作品。結合了策略、運氣和心理戰，適合3-6人遊玩。玩家在遊戲中扮演神秘怪盜，潛入舞會偷取寶物，過程中偷襲、互防，誰能成功藏住最多寶物就勝利！',
+  //   more:'https://reurl.cc/lYMLOA',
+  //   slides: [
+  //       { image: 'Images/Treasure1.webp', alt: 'Treasure1' },
+  //       { image: 'Images/Treasure2.webp', alt: 'Treasure2' },
+  //       { image: 'Images/Treasure3.webp', alt: 'Treasure3' },
+  //   ]
   // }
+
+
 ]).then(() => console.log("Data inserted into CarouselWorks.db"));
 
 
